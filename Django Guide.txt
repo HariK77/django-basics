@@ -47,7 +47,7 @@ NOTE : Need to run in the project folder
 
     django-admin help       # For seeing all commands available
 
-    django-admin startproject nameoftheproject      # 
+    django-admin startproject nameoftheproject      # for starting django project
 
     python manage.py runserver    # for starting the django server
 
@@ -59,51 +59,74 @@ NOTE : Need to run in the project folder
 
 ** PIP Commands
 
-pip freeze # to see all installed libraries
+    pip freeze # to see all installed libraries
 
-pip freeze > requirements.txt # to save all the installed libraries in txt file.
+    pip freeze > requirements.txt # to save all the installed libraries in txt file.
 
-pip install -r /path/to/requirements.txt  # to install packages from requirements.txt
-
-
-DJango MYSQL Connection requirements :
-
-Assuming you have installed mysql and configured it.
-
-Install these packages :
-
-sudo apt-get install python-dev libmysqlclient-dev
-
-pip install mysqlclient
-
-If you face any issue like:
-
-/usr/bin/ld: cannot find -lssl
-/usr/bin/ld: cannot find -lcrypto
-collect2: error: ld returned 1 exit status
-
-Run below command :
-
-sudo apt install libssl-dev
+    pip install -r /path/to/requirements.txt  # to install packages from requirements.txt
 
 
-and then install 
+** DJango MYSQL Connection requirements :
 
-pip install mysqlclient
+    Assuming you have installed mysql and configured it.
 
-DG Config :
+    Install these packages :
 
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'btre',
-        'USER': 'root',
-        'PASSWORD': 'rgukt123',
-        'HOST': 'localhost', 
-        'PORT': '',
+    sudo apt-get install python-dev libmysqlclient-dev
 
-If you see any pip wheel error messages while installing a package :
+    pip install mysqlclient
 
-Run this command :
+    If you face any issue like:
 
-pip install wheel
+    /usr/bin/ld: cannot find -lssl
+    /usr/bin/ld: cannot find -lcrypto
+    collect2: error: ld returned 1 exit status
+
+    Run below command :
+
+    sudo apt install libssl-dev
+
+    and then install 
+
+    pip install mysqlclient
+
+    DG Config :
+
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'btre',
+            'USER': 'root',
+            'PASSWORD': 'rgukt123',
+            'HOST': 'localhost', 
+            'PORT': '',
+
+    If you see any pip wheel error messages while installing a package :
+
+    Run this command :
+
+    pip install wheel
+
+** DJango PostgeSQL Connection requirements :
+
+     psql --version   # checking psql is installed or not
+
+     Logging into psql default user will be 'postgres' using below command
+
+     sudo -u postgres psql postgres
 
 
+** Installing pgadmin4 for graphical view postgres:
+
+    wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+
+    sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main" >> /etc/apt/sources.list.d/pgdg.list'
+
+    sudo apt-get update
+
+    sudo apt install pgadmin4 pgadmin4-apache2
+
+    While installation it will ask for email and password
+
+    email : webmaster@localhost
+    password: rgukt123
+
+    
