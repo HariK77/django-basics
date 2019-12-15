@@ -1,0 +1,109 @@
+** For Installing pip3 version
+
+    python3 -m pip install
+
+    python3 -m pip install --upgrade pip
+
+    python3 -m pip --version
+
+** Python Coding standard 
+
+    python3 -m pip install -U autopep8 --user
+
+
+** Virtual Environment Creation using virtualenv:
+
+NOTE : Need to run in the project folder
+
+    pip3 install virtualenv  (if it gives error use below command)
+
+    pip3 install virtualenv --user
+
+    virtualenv myvenv -p python3  # virtual Environment creation, "myenv" is virtual environment name
+
+    source myvenv/bin/activate   # activating virtual environment
+
+    deactivate   # deactivationg virtual environment
+
+** Virtual Environment Creation using venv: (preferred way for python3)
+
+NOTE : Need to run in the project folder
+
+    sudo apt-get install python3-venv    # installing venv
+
+    python3 -m venv venv        # virtual Environment creation, "venv" is virtual environment name(last)
+
+    source venv/bin/activate    # activating virtual environment
+
+    deactivate                  # deactivationg virtual environment
+
+** Installing Django:
+
+    pip install django      # installing django latest version
+
+    pip install django==2.2     # we can metion version if we want to install spacific version
+
+** Django Commands: 
+
+    django-admin help       # For seeing all commands available
+
+    django-admin startproject nameoftheproject      # 
+
+    python manage.py runserver    # for starting the django server
+
+    python manage.py startapp nameoftheapp      #  for creating the apps in django project
+
+    python manage.py collectstatic      #  for moving all templates into static folder in root folder 
+
+    python manage.py migrate       # for migrating database table schemas
+
+** PIP Commands
+
+pip freeze # to see all installed libraries
+
+pip freeze > requirements.txt # to save all the installed libraries in txt file.
+
+pip install -r /path/to/requirements.txt  # to install packages from requirements.txt
+
+
+DJango MYSQL Connection requirements :
+
+Assuming you have installed mysql and configured it.
+
+Install these packages :
+
+sudo apt-get install python-dev libmysqlclient-dev
+
+pip install mysqlclient
+
+If you face any issue like:
+
+/usr/bin/ld: cannot find -lssl
+/usr/bin/ld: cannot find -lcrypto
+collect2: error: ld returned 1 exit status
+
+Run below command :
+
+sudo apt install libssl-dev
+
+
+and then install 
+
+pip install mysqlclient
+
+DG Config :
+
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'btre',
+        'USER': 'root',
+        'PASSWORD': 'rgukt123',
+        'HOST': 'localhost', 
+        'PORT': '',
+
+If you see any pip wheel error messages while installing a package :
+
+Run this command :
+
+pip install wheel
+
+
